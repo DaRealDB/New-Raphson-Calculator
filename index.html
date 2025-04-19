@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton-Raphson Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Newton-Raphson Method Calculator</h1>
+    
+    <div class="calculator">
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <p>Enter a function f(x) and its derivative f'(x) in terms of x. Provide an initial guess and tolerance to find the root.</p>
+            <p>Examples:</p>
+            <ul>
+                <li>Function: x^2 - 4 → Enter as: Math.pow(x,2) - 4</li>
+                <li>Derivative: 2x → Enter as: 2*x</li>
+            </ul>
+        </div>
+        
+        <div class="form-group">
+            <label for="function">Function f(x):</label>
+            <input type="text" id="function" placeholder="e.g., Math.pow(x,3) - x - 2" value="Math.pow(x,3) - x - 2">
+        </div>
+        
+        <div class="form-group">
+            <label for="derivative">Derivative f'(x):</label>
+            <input type="text" id="derivative" placeholder="e.g., 3*Math.pow(x,2) - 1" value="3*Math.pow(x,2) - 1">
+        </div>
+        
+        <div class="form-group">
+            <label for="initialGuess">Initial Guess (x₀):</label>
+            <input type="number" id="initialGuess" step="any" value="1">
+        </div>
+        
+        <div class="form-group">
+            <label for="tolerance">Tolerance (ε):</label>
+            <input type="number" id="tolerance" step="any" min="0" value="0.0001">
+        </div>
+        
+        <div class="form-group">
+            <label for="maxIterations">Maximum Iterations:</label>
+            <input type="number" id="maxIterations" min="1" value="100">
+        </div>
+        
+        <button onclick="calculate()">Calculate Root</button>
+        
+        <div id="error" class="error"></div>
+        
+        <div id="results">
+            <h2>Results</h2>
+            <div id="rootResult"></div>
+            <div id="iterationsResult"></div>
+            <div id="tableContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
