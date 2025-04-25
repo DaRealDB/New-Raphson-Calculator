@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f5f5f5;
@@ -19,6 +19,7 @@ h1 {
     border-radius: 8px;
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .form-group {
@@ -93,4 +94,34 @@ tr:nth-child(even) {
     border-left: 4px solid #3498db;
     padding: 15px;
     margin-bottom: 20px;
+}
+
+.graph-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
 }

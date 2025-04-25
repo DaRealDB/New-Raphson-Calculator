@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Newton-Raphson Method Calculator</h1>
+    <h1>Newton-Raphson Method Calculator with Graph</h1>
     
     <div class="calculator">
         <div class="instructions">
@@ -17,6 +17,8 @@
             <ul>
                 <li>Function: x^2 - 4 → Enter as: Math.pow(x,2) - 4</li>
                 <li>Derivative: 2x → Enter as: 2*x</li>
+                <li>Trigonometric: sin(x) → Enter as: Math.sin(x)</li>
+                <li>Exponential: e^x → Enter as: Math.exp(x)</li>
             </ul>
         </div>
         
@@ -30,19 +32,43 @@
             <input type="text" id="derivative" placeholder="e.g., 3*Math.pow(x,2) - 1" value="3*Math.pow(x,2) - 1">
         </div>
         
-        <div class="form-group">
-            <label for="initialGuess">Initial Guess (x₀):</label>
-            <input type="number" id="initialGuess" step="any" value="1">
+        <div class="controls">
+            <div class="control-group">
+                <label for="initialGuess">Initial Guess (x₀):</label>
+                <input type="number" id="initialGuess" step="any" value="1">
+            </div>
+            
+            <div class="control-group">
+                <label for="tolerance">Tolerance (ε):</label>
+                <input type="number" id="tolerance" step="any" min="0" value="0.0001">
+            </div>
+            
+            <div class="control-group">
+                <label for="maxIterations">Maximum Iterations:</label>
+                <input type="number" id="maxIterations" min="1" value="100">
+            </div>
         </div>
         
-        <div class="form-group">
-            <label for="tolerance">Tolerance (ε):</label>
-            <input type="number" id="tolerance" step="any" min="0" value="0.0001">
-        </div>
-        
-        <div class="form-group">
-            <label for="maxIterations">Maximum Iterations:</label>
-            <input type="number" id="maxIterations" min="1" value="100">
+        <div class="controls">
+            <div class="control-group">
+                <label for="xMin">Graph X Min:</label>
+                <input type="number" id="xMin" step="any" value="-2">
+            </div>
+            
+            <div class="control-group">
+                <label for="xMax">Graph X Max:</label>
+                <input type="number" id="xMax" step="any" value="2">
+            </div>
+            
+            <div class="control-group">
+                <label for="yMin">Graph Y Min:</label>
+                <input type="number" id="yMin" step="any" value="-5">
+            </div>
+            
+            <div class="control-group">
+                <label for="yMax">Graph Y Max:</label>
+                <input type="number" id="yMax" step="any" value="5">
+            </div>
         </div>
         
         <button onclick="calculate()">Calculate Root</button>
@@ -54,6 +80,13 @@
             <div id="rootResult"></div>
             <div id="iterationsResult"></div>
             <div id="tableContainer"></div>
+        </div>
+    </div>
+
+    <div class="graph-container">
+        <h2>Function Graph with Iterations</h2>
+        <div class="chart-container">
+            <canvas id="functionChart"></canvas>
         </div>
     </div>
 
